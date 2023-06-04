@@ -1,7 +1,13 @@
 #!/bin/bash
 
-echo "Syncing all repositories..."
 config_file="$HOME/.config/gsync"
+
+case "$1" in
+    "config" | "c" | "--config" | "-c")
+        ${EDITOR:-vim} "$config_file"
+        exit 0
+        ;;
+esac
 
 if [ ! -f "$config_file" ]; then
     echo "Config file $config_file not found."
@@ -9,12 +15,9 @@ if [ ! -f "$config_file" ]; then
 fi
 
 while IFS= read -r repo_path; do
+    eval repo_path="$repo_path"
     (
         cd "$repo_path" || exit 1
-        echo "Syncing $repo_path..."
         (git pull --rebase --autostash && git push) >/dev/null 2>&1 &
     ) &
-done < "$config_file"
-
-echo "All repositories have been synced."
-
+done <"$config_file"
