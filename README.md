@@ -20,78 +20,73 @@
 <a href="https://github.com/2KAbhishek/gsync/pulse">
 <img alt="Last Updated" src="https://img.shields.io/github/last-commit/2kabhishek/gsync?style=flat&color=e06c75&label="> </a>
 
-<h3>Short Sweet Headline 🎇🎉</h3>
-
-<figure>
-  <img src="images/screenshot.png" alt="gsync in action">
-  <br/>
-  <figcaption>gsync in action</figcaption>
-</figure>
+<h3>Hassle Free Git Syncing 🐙🔄</h3>
 
 </div>
 
-gsync is a `<utility/tool>` that allows `<target_audience>` to `<action>`.
+gsync is a simple tool that silently syncs all your git repos.
+
+If you have a bunch of git repos to maintain and switch devices often, a lot of time is wasted on syncing those repos.
+
+This is as simple as running `gsync`
 
 ## ✨ Features
 
-- Supports foo
-- Can do bar
-- Works with bazz
+- Sync all your git repos silently
+- Plain text based configuration
 
 ## Setup
 
 ### ⚡ Requirements
 
-- foo >= bar
-- bazz
+You will need a config file with repo paths: "$HOME/.config/gsync"
+
+```
+$HOME/Projects/repo1
+$HOME/Projects/GitHub/repo2
+```
 
 ### 🚀 Installation
 
 ```bash
 git clone https://github.com/2kabhishek/gsync
 cd gsync
-<install_command>
+# symlink to a directory in your PATH
+ln -sfnv $PWD/gsync.sh $HOME/.local/bin/gsync
+
+gsync config # Edit the config file
 ```
 
 ### 💻 Usage
 
 ```bash
 USAGE:
-    gsync [FLAGS] [OPTIONS]
+    gsync [c | config | -c | --config]
 Example:
-    gsync
+    gsync # Sync repos in config file
+    gsync c # Edit the config file
 ```
-
-## What's Next
-
-Planning to add `<feature/module>`.
-
-### ✅ To-Do
-
-- [x] Setup repo
-- [ ] Think real hard
-- [ ] Start typing
 
 ##  Behind The Code
 
 ### 🌈 Inspiration
 
-gsync was inspired by `<reason/idea>`.
+Maintaining all of the repos I have was becoming a major hassle, faced some issues too, needed a tool to do this quietly.
 
 ### 💡 Challenges/Learnings
 
-- The main challenges were `<issue/difficulty>`
-- I learned about `<learning/accomplishment>`
+- I learned about using `IFS` for reading data for files
+- Used `case` for command line flags in bash
 
 ### 🧰 Tooling
 
-- [Dotfiles](https://github.com/2kabhishek/Dotfiles) — Dev Environment
+- [Macfiles](https://github.com/2kabhishek/Macfiles) — Dev Environment
 - [nvim2k](https://github.com/2kabhishek/nvim2k) — Personalized Editor
-- [awesome2k](https://github.com/2kabhishek/awesome2k) — Tiling Window Manager
 
 ### 🔍 More Info
 
-- [similar](https://github.com/2kabhishek/similar) — a related repo
+- [entry](https://github.com/2kabhishek/entry) — Make daily entries
+- [committer](https://github.com/2kabhishek/committer) — Easy commits and backups
 
 <hr>
 
