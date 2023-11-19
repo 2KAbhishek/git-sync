@@ -1,6 +1,6 @@
 #!/bin/bash
 
-config_file="$HOME/.config/gsync"
+config_file="$HOME/.config/gsyncrc"
 
 case "$1" in
     "config" | "c" | "--config" | "-c")
