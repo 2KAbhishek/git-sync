@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 config_file="$HOME/.config/git-sync.conf"
 
